@@ -5,6 +5,7 @@ import g3 from "@/assets/g3.jpg";
 import g4 from "@/assets/g4.jpg";
 import g5 from "@/assets/g5.jpg";
 import g6 from "@/assets/g6.jpg";
+import { useI18n } from "./i18n";
 
 const imgs = [
   { src: g3, span: "row-span-2" },
@@ -16,14 +17,15 @@ const imgs = [
 ];
 
 export function Gallery() {
+  const { t } = useI18n();
   return (
     <section id="gallery" className="relative py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-end justify-between gap-6 flex-wrap">
           <div>
-            <span className="text-xs uppercase tracking-[0.3em] text-primary">Gallery</span>
+            <span className="text-xs uppercase tracking-[0.3em] text-primary">{t("gl.kicker")}</span>
             <h2 className="mt-3 text-4xl md:text-5xl font-bold">
-              Step inside <span className="text-gradient">Zentrix</span>
+              {t("gl.title1")} <span className="text-gradient">{t("gl.title2")}</span>
             </h2>
           </div>
           <a

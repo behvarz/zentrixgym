@@ -1,18 +1,18 @@
 import { MapPin, Phone, Clock, Instagram } from "lucide-react";
 import { motion } from "framer-motion";
+import { useI18n } from "./i18n";
 
 export function Contact() {
+  const { t } = useI18n();
   return (
     <section id="contact" className="relative py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
-          <span className="text-xs uppercase tracking-[0.3em] text-primary">Contact</span>
+          <span className="text-xs uppercase tracking-[0.3em] text-primary">{t("ct.kicker")}</span>
           <h2 className="mt-3 text-4xl md:text-5xl font-bold">
-            Visit us in <span className="text-gradient">Yerevan</span>
+            {t("ct.title1")} <span className="text-gradient">{t("ct.title2")}</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">
-            Drop in for a tour, meet the team and feel the energy yourself.
-          </p>
+          <p className="mt-4 text-muted-foreground">{t("ct.desc")}</p>
         </div>
 
         <div className="mt-12 grid lg:grid-cols-2 gap-6">
@@ -40,9 +40,9 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             className="space-y-4"
           >
-            <Item icon={MapPin} title="Address" value="Griboyedov 23/4, Yerevan, Armenia" />
-            <Item icon={Phone} title="Phone" value="+374 44 20 11 00" href="tel:+37444201100" />
-            <Item icon={Clock} title="Working Hours" value="Every day · 07:00 – 23:00" />
+            <Item icon={MapPin} title={t("ct.address")} value={t("ct.addressV")} />
+            <Item icon={Phone} title={t("ct.phone")} value="+374 44 20 11 00" href="tel:+37444201100" />
+            <Item icon={Clock} title={t("ct.hours")} value={t("ct.hoursV")} />
             <a
               href="https://www.instagram.com/zentrixgym"
               target="_blank"
@@ -55,7 +55,7 @@ export function Contact() {
                     <Instagram className="h-5 w-5" />
                   </span>
                   <div>
-                    <div className="text-xs uppercase tracking-widest text-muted-foreground">Instagram</div>
+                    <div className="text-xs uppercase tracking-widest text-muted-foreground">{t("ct.ig")}</div>
                     <div className="text-base font-semibold">@zentrixgym</div>
                   </div>
                 </div>
@@ -67,7 +67,7 @@ export function Contact() {
               href="tel:+37444201100"
               className="block text-center rounded-2xl bg-gradient-to-r from-primary to-primary-glow px-6 py-5 font-semibold text-primary-foreground neon-pulse"
             >
-              Call Now to Book a Tour
+              {t("ct.callCta")}
             </a>
           </motion.div>
         </div>

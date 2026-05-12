@@ -1,21 +1,22 @@
 import { motion } from "framer-motion";
 import hero from "@/assets/hero.jpg";
 import { Dumbbell, Clock, Users, Sparkles } from "lucide-react";
-
-const stats = [
-  { icon: Dumbbell, label: "Premium Equipment" },
-  { icon: Clock, label: "Open 07:00 – 23:00" },
-  { icon: Users, label: "Personal Training" },
-  { icon: Sparkles, label: "Modern Interior" },
-];
+import { useI18n } from "./i18n";
 
 export function Hero() {
+  const { t } = useI18n();
+  const stats = [
+    { icon: Dumbbell, label: t("stat.equipment") },
+    { icon: Clock, label: t("stat.hours") },
+    { icon: Users, label: t("stat.training") },
+    { icon: Sparkles, label: t("stat.interior") },
+  ];
   return (
     <section id="top" className="relative min-h-screen overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={hero}
-          alt="Zentrix Gym interior"
+          alt="Zentrix Gym"
           width={1920}
           height={1280}
           className="h-full w-full object-cover opacity-60"
@@ -36,29 +37,28 @@ export function Hero() {
         >
           <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-primary neon-pulse" />
-            Yerevan · Griboyedov 23/4
+            {t("hero.badge")}
           </span>
           <h1 className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95]">
-            ENERGY <br />
-            STARTS <span className="text-gradient">HERE</span>
+            {t("hero.title1")} <br />
+            {t("hero.title2")} <span className="text-gradient">{t("hero.title3")}</span>
           </h1>
           <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-            Modern fitness experience in Yerevan with premium equipment and a motivating
-            atmosphere built for those who chase strength, discipline and transformation.
+            {t("hero.subtitle")}
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#memberships"
               className="group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary-glow px-7 py-3.5 text-sm font-semibold text-primary-foreground neon-pulse"
             >
-              Join Now
+              {t("hero.cta1")}
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </a>
             <a
               href="#memberships"
               className="inline-flex items-center gap-2 rounded-full glass px-7 py-3.5 text-sm font-semibold hover:border-primary/50 transition-colors"
             >
-              View Memberships
+              {t("hero.cta2")}
             </a>
           </div>
         </motion.div>

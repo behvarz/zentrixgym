@@ -1,6 +1,15 @@
 import { Instagram } from "lucide-react";
+import { useI18n } from "./i18n";
 
 export function Footer() {
+  const { t } = useI18n();
+  const links: [string, string][] = [
+    [t("nav.memberships"), "#memberships"],
+    [t("nav.about"), "#about"],
+    [t("nav.facilities"), "#facilities"],
+    [t("nav.gallery"), "#gallery"],
+    [t("nav.contact"), "#contact"],
+  ];
   return (
     <footer className="relative border-t border-border mt-12">
       <div className="mx-auto max-w-7xl px-6 py-14 grid md:grid-cols-3 gap-10">
@@ -13,22 +22,13 @@ export function Footer() {
               ZENTRIX<span className="text-primary">.</span>
             </span>
           </div>
-          <p className="mt-4 text-sm text-muted-foreground max-w-xs">
-            Premium fitness experience in Yerevan. Built for strength, discipline and
-            transformation.
-          </p>
+          <p className="mt-4 text-sm text-muted-foreground max-w-xs">{t("ft.tagline")}</p>
         </div>
 
         <div>
-          <div className="text-xs uppercase tracking-widest text-muted-foreground">Explore</div>
+          <div className="text-xs uppercase tracking-widest text-muted-foreground">{t("ft.explore")}</div>
           <ul className="mt-4 space-y-2 text-sm">
-            {[
-              ["Memberships", "#memberships"],
-              ["About", "#about"],
-              ["Facilities", "#facilities"],
-              ["Gallery", "#gallery"],
-              ["Contact", "#contact"],
-            ].map(([l, h]) => (
+            {links.map(([l, h]) => (
               <li key={l}>
                 <a href={h} className="hover:text-primary transition-colors">{l}</a>
               </li>
@@ -37,11 +37,11 @@ export function Footer() {
         </div>
 
         <div>
-          <div className="text-xs uppercase tracking-widest text-muted-foreground">Visit</div>
+          <div className="text-xs uppercase tracking-widest text-muted-foreground">{t("ft.visit")}</div>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li>Griboyedov 23/4, Yerevan</li>
+            <li>{t("ct.addressV")}</li>
             <li>+374 44 20 11 00</li>
-            <li>Daily · 07:00 – 23:00</li>
+            <li>{t("ct.hoursV")}</li>
           </ul>
           <a
             href="https://www.instagram.com/zentrixgym"
@@ -55,8 +55,8 @@ export function Footer() {
       </div>
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <div>© {new Date().getFullYear()} Zentrix Gym. All rights reserved.</div>
-          <div>Yerevan, Armenia</div>
+          <div>© {new Date().getFullYear()} Zentrix Gym. {t("ft.rights")}</div>
+          <div>{t("ft.location")}</div>
         </div>
       </div>
     </footer>
