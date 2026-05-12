@@ -3,8 +3,10 @@ import g1 from "@/assets/g1.jpg";
 import g4 from "@/assets/g4.jpg";
 import g5 from "@/assets/g5.jpg";
 import { Counter } from "./Counter";
+import { useI18n } from "./i18n";
 
 export function About() {
+  const { t } = useI18n();
   return (
     <section id="about" className="relative py-32 overflow-hidden">
       <div className="absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-primary/20 blur-[120px]" />
@@ -15,24 +17,17 @@ export function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-xs uppercase tracking-[0.3em] text-primary">About Zentrix</span>
+          <span className="text-xs uppercase tracking-[0.3em] text-primary">{t("ab.kicker")}</span>
           <h2 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">
-            Built for those who <span className="text-gradient">don't settle</span>
+            {t("ab.title1")} <span className="text-gradient">{t("ab.title2")}</span>
           </h2>
-          <p className="mt-6 text-muted-foreground leading-relaxed">
-            Zentrix Gym is designed for people who want strength, discipline, confidence and real
-            transformation. We've combined modern equipment, a motivating atmosphere and a
-            professional environment to create one of Yerevan's premier training spaces.
-          </p>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            Whether you're starting your first program or chasing a personal record, the energy
-            here moves with you.
-          </p>
+          <p className="mt-6 text-muted-foreground leading-relaxed">{t("ab.p1")}</p>
+          <p className="mt-4 text-muted-foreground leading-relaxed">{t("ab.p2")}</p>
 
           <div className="mt-10 grid grid-cols-3 gap-6">
-            <Stat value={1500} suffix="+" label="Members" />
-            <Stat value={25} suffix="+" label="Coaches" />
-            <Stat value={16} label="Hours daily" />
+            <Stat value={1500} suffix="+" label={t("ab.stat1")} />
+            <Stat value={25} suffix="+" label={t("ab.stat2")} />
+            <Stat value={16} label={t("ab.stat3")} />
           </div>
         </motion.div>
 

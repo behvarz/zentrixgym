@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
-const links = [
-  { href: "#memberships", label: "Memberships" },
-  { href: "#about", label: "About" },
-  { href: "#facilities", label: "Facilities" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#contact", label: "Contact" },
-];
+import { useI18n } from "./i18n";
+import { LangSwitcher } from "./LangSwitcher";
 
 export function Nav() {
+  const { t } = useI18n();
+  const links = [
+    { href: "#memberships", label: t("nav.memberships") },
+    { href: "#about", label: t("nav.about") },
+    { href: "#facilities", label: t("nav.facilities") },
+    { href: "#gallery", label: t("nav.gallery") },
+    { href: "#contact", label: t("nav.contact") },
+  ];
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -42,19 +44,19 @@ export function Nav() {
             </a>
           ))}
         </nav>
-        <a
-          href="#memberships"
-          className="hidden md:inline-flex items-center rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground hover:shadow-[var(--shadow-glow)] transition-shadow"
-        >
-          Join Now
-        </a>
-        <button
-          aria-label="Menu"
-          onClick={() => setOpen(!open)}
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-border"
-        >
-          <span className="block h-px w-5 bg-foreground relative before:content-[''] before:absolute before:-top-1.5 before:left-0 before:h-px before:w-5 before:bg-foreground after:content-[''] after:absolute after:top-1.5 after:left-0 after:h-px after:w-5 after:bg-foreground" />
-        </button>
+        <div className="hidden md:block">
+          <LangSwitcher />
+        </div>
+        <div className="md:hidden flex items-center gap-2">
+          <LangSwitcher compact />
+          <button
+            aria-label="Menu"
+            onClick={() => setOpen(!open)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border"
+          >
+            <span className="block h-px w-5 bg-foreground relative before:content-[''] before:absolute before:-top-1.5 before:left-0 before:h-px before:w-5 before:bg-foreground after:content-[''] after:absolute after:top-1.5 after:left-0 after:h-px after:w-5 after:bg-foreground" />
+          </button>
+        </div>
       </div>
       {open && (
         <div className="md:hidden glass mt-3 mx-6 rounded-xl p-4 flex flex-col gap-3">
@@ -63,13 +65,6 @@ export function Nav() {
               {l.label}
             </a>
           ))}
-          <a
-            href="#memberships"
-            onClick={() => setOpen(false)}
-            className="rounded-full bg-primary px-4 py-2 text-sm text-center text-primary-foreground"
-          >
-            Join Now
-          </a>
         </div>
       )}
     </motion.header>

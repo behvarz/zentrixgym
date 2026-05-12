@@ -8,6 +8,7 @@ import { Gallery } from "@/components/site/Gallery";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
+import { LanguageProvider } from "@/components/site/i18n";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -31,16 +32,18 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="relative">
-      <Nav />
-      <Hero />
-      <Memberships />
-      <About />
-      <Facilities />
-      <Gallery />
-      <Testimonials />
-      <Contact />
-      <Footer />
-    </main>
+    <LanguageProvider>
+      <main className="relative">
+        <Nav />
+        <Hero />
+        <Memberships />
+        <About />
+        <Facilities />
+        <Gallery />
+        <Testimonials />
+        <Contact />
+        <Footer />
+      </main>
+    </LanguageProvider>
   );
 }
