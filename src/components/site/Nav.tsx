@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useI18n } from "./i18n";
 import { LangSwitcher } from "./LangSwitcher";
+import logo from "@/assets/logo.png";
 
 export function Nav() {
   const { t } = useI18n();
@@ -30,9 +31,11 @@ export function Nav() {
     >
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2 group">
-          <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary-glow text-primary-foreground font-bold shadow-[var(--shadow-glow)]">
-            Z
-          </span>
+          <img
+            src={logo}
+            alt="Zentrix Gym logo"
+            className="h-10 w-auto rounded-md object-contain shadow-[var(--shadow-glow)]"
+          />
           <span className="font-display text-lg font-semibold tracking-tight">
             ZENTRIX<span className="text-primary">.</span>
           </span>

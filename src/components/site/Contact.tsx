@@ -2,6 +2,13 @@ import { MapPin, Phone, Clock, Instagram } from "lucide-react";
 import { motion } from "framer-motion";
 import { useI18n } from "./i18n";
 
+const yandexMapEmbedUrl =
+  "https://yandex.com/map-widget/v1/?ll=44.514442%2C40.213037&mode=search&oid=230800862758&ol=biz&z=16";
+const yandexMapUrl =
+  "https://yandex.com/maps/org/zentrix/230800862758/?ll=44.514442%2C40.213037&z=16&utm_source=share";
+const googleMapUrl =
+  "https://www.google.com/maps/place/ZENTRIX+GYM/@40.2129724,44.5145669,21z/data=!4m6!3m5!1s0x406aa3003d19fccb:0xc25b8c70d5642fb0!8m2!3d40.2129528!4d44.5144984!16s%2Fg%2F11z0yznbm6";
+
 export function Contact() {
   const { t } = useI18n();
   return (
@@ -25,11 +32,30 @@ export function Contact() {
           >
             <iframe
               title="Zentrix Gym map"
-              src="https://www.google.com/maps?q=Griboyedov+23/4,+Yerevan,+Armenia&output=embed"
-              className="w-full h-[480px] grayscale contrast-125 opacity-90"
+              src={yandexMapEmbedUrl}
+              className="h-[480px] w-full border-0"
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             />
+            <div className="px-4 py-4 border-t border-border/60 flex flex-wrap gap-3">
+              <a
+                href={yandexMapUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-lg border border-border px-3 py-2 text-xs font-medium hover:border-primary/60 hover:text-primary transition-colors"
+              >
+                Open in Yandex Maps
+              </a>
+              <a
+                href={googleMapUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-lg border border-border px-3 py-2 text-xs font-medium hover:border-primary/60 hover:text-primary transition-colors"
+              >
+                Open in Google Maps
+              </a>
+            </div>
             <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-primary/20" />
           </motion.div>
 

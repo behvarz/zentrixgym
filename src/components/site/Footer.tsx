@@ -1,5 +1,6 @@
 import { Instagram } from "lucide-react";
 import { useI18n } from "./i18n";
+import logo from "@/assets/logo.png";
 
 export function Footer() {
   const { t } = useI18n();
@@ -15,9 +16,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-14 grid md:grid-cols-3 gap-10">
         <div>
           <div className="flex items-center gap-2">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-gradient-to-br from-primary to-primary-glow text-primary-foreground font-bold">
-              Z
-            </span>
+            <img src={logo} alt="Zentrix Gym logo" className="h-10 w-auto rounded-md object-contain" />
             <span className="font-display text-lg font-semibold">
               ZENTRIX<span className="text-primary">.</span>
             </span>
@@ -56,9 +55,18 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <div>© {new Date().getFullYear()} Zentrix Gym. {t("ft.rights")}</div>
+          <a
+            href="https://orscale.com"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-primary transition-colors"
+          >
+            Powered by Orscale
+          </a>
           <div>{t("ft.location")}</div>
         </div>
       </div>
     </footer>
   );
 }
+
