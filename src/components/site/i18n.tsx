@@ -108,11 +108,14 @@ const translations: Record<Lang, Dict> = {
     "ct.hoursV": "Ամեն օր · 07:00 – 23:00",
     "ct.ig": "Ինստագրամ",
     "ct.callCta": "Զանգահարիր հիմա շրջագայության համար",
+    "ct.openYandexMaps": "Բացել Yandex Maps-ում",
+    "ct.openGoogleMaps": "Բացել Google Maps-ում",
 
     "ft.tagline": "Պրեմիում ֆիթնես փորձառություն Երևանում։ Ուժի, կարգապահության և փոխակերպման համար։",
     "ft.explore": "Բաժիններ",
     "ft.visit": "Այցելիր",
     "ft.rights": "Բոլոր իրավունքները պաշտպանված են։",
+    "ft.poweredBy": "Աջակցում է Orscale-ը",
     "ft.location": "Երևան, Հայաստան",
   },
   en: {
@@ -218,11 +221,14 @@ const translations: Record<Lang, Dict> = {
     "ct.hoursV": "Every day · 07:00 – 23:00",
     "ct.ig": "Instagram",
     "ct.callCta": "Call Now to Book a Tour",
+    "ct.openYandexMaps": "Open in Yandex Maps",
+    "ct.openGoogleMaps": "Open in Google Maps",
 
     "ft.tagline": "Premium fitness experience in Yerevan. Built for strength, discipline and transformation.",
     "ft.explore": "Explore",
     "ft.visit": "Visit",
     "ft.rights": "All rights reserved.",
+    "ft.poweredBy": "Powered by Orscale",
     "ft.location": "Yerevan, Armenia",
   },
   ru: {
@@ -328,11 +334,14 @@ const translations: Record<Lang, Dict> = {
     "ct.hoursV": "Ежедневно · 07:00 – 23:00",
     "ct.ig": "Instagram",
     "ct.callCta": "Позвонить для записи на экскурсию",
+    "ct.openYandexMaps": "Открыть в Yandex Maps",
+    "ct.openGoogleMaps": "Открыть в Google Maps",
 
     "ft.tagline": "Премиальный фитнес в Ереване. Для силы, дисциплины и трансформации.",
     "ft.explore": "Разделы",
     "ft.visit": "Посетить",
     "ft.rights": "Все права защищены.",
+    "ft.poweredBy": "Powered by Orscale",
     "ft.location": "Ереван, Армения",
   },
 };

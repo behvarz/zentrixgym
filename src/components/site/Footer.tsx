@@ -61,12 +61,12 @@ export function Footer() {
             rel="noreferrer"
             className="hover:text-primary transition-colors"
           >
-            Powered by Orscale
+            {t("ft.poweredBy")}
           </a>
-          <div>{t("ft.location")}</div>
         </div>
       </div>
     </footer>
   );
 }
+
 

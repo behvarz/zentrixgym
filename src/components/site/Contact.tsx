@@ -45,7 +45,7 @@ export function Contact() {
                 rel="noreferrer"
                 className="rounded-lg border border-border px-3 py-2 text-xs font-medium hover:border-primary/60 hover:text-primary transition-colors"
               >
-                Open in Yandex Maps
+                {t("ct.openYandexMaps")}
               </a>
               <a
                 href={googleMapUrl}
@@ -53,7 +53,7 @@ export function Contact() {
                 rel="noreferrer"
                 className="rounded-lg border border-border px-3 py-2 text-xs font-medium hover:border-primary/60 hover:text-primary transition-colors"
               >
-                Open in Google Maps
+                {t("ct.openGoogleMaps")}
               </a>
             </div>
             <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-primary/20" />
