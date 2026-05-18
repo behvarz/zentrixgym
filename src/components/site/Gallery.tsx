@@ -19,12 +19,12 @@ const imgs = [
 export function Gallery() {
   const { t } = useI18n();
   return (
-    <section id="gallery" className="relative py-32">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="gallery" className="relative py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-end justify-between gap-6 flex-wrap">
           <div>
-            <span className="text-xs uppercase tracking-[0.3em] text-primary">{t("gl.kicker")}</span>
-            <h2 className="mt-3 text-4xl md:text-5xl font-bold">
+            <span className="text-xs uppercase tracking-[0.18em] sm:tracking-[0.3em] text-primary">{t("gl.kicker")}</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold break-words">
               {t("gl.title1")} <span className="text-gradient">{t("gl.title2")}</span>
             </h2>
           </div>
@@ -38,7 +38,7 @@ export function Gallery() {
           </a>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] gap-4">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[160px] sm:auto-rows-[180px] gap-4">
           {imgs.map((im, i) => (
             <motion.div
               key={i}

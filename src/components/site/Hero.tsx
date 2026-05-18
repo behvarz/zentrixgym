@@ -28,35 +28,35 @@ export function Hero() {
 
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-primary/30 blur-[120px]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-40 pb-24 min-h-screen flex flex-col justify-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 pt-32 sm:pt-40 pb-20 sm:pb-24 min-h-screen flex flex-col justify-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl"
+          className="max-w-3xl min-w-0"
         >
-          <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          <span className="inline-flex max-w-full items-center gap-2 rounded-full glass px-4 py-1.5 text-xs tracking-[0.14em] sm:tracking-[0.2em] text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-primary neon-pulse" />
-            Երևան
+            <span className="truncate">Երևան</span>
           </span>
-          <h1 className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95]">
+          <h1 className="mt-6 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.02] sm:leading-[0.95] break-words">
             {t("hero.title1")} <br />
             {t("hero.title2")} <span className="text-gradient">{t("hero.title3")}</span>
           </h1>
-          <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
+          <p className="mt-6 max-w-xl text-base md:text-lg text-muted-foreground break-words">
             {t("hero.subtitle")}
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
             <a
               href="#memberships"
-              className="group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary-glow px-7 py-3.5 text-sm font-semibold text-primary-foreground neon-pulse"
+              className="group relative inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary-glow px-7 py-3.5 text-sm font-semibold text-primary-foreground neon-pulse text-center"
             >
               {t("hero.cta1")}
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </a>
             <a
               href="#memberships"
-              className="inline-flex items-center gap-2 rounded-full glass px-7 py-3.5 text-sm font-semibold hover:border-primary/50 transition-colors"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full glass px-7 py-3.5 text-sm font-semibold hover:border-primary/50 transition-colors text-center"
             >
               {t("hero.cta2")}
             </a>
@@ -67,17 +67,17 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"
         >
           {stats.map((s) => (
             <div
               key={s.label}
-              className="glass rounded-xl p-5 flex items-center gap-3 hover:border-primary/40 transition-colors"
+              className="glass rounded-xl p-5 flex items-start gap-3 hover:border-primary/40 transition-colors min-w-0"
             >
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/15 text-primary">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/15 text-primary shrink-0">
                 <s.icon className="h-5 w-5" />
               </span>
-              <span className="text-sm font-medium">{s.label}</span>
+              <span className="text-sm font-medium leading-snug break-words">{s.label}</span>
             </div>
           ))}
         </motion.div>

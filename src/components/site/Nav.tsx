@@ -29,14 +29,14 @@ export function Nav() {
         scrolled ? "glass py-3" : "py-5"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2 group">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between gap-2">
+        <a href="#top" className="flex min-w-0 items-center gap-2 group">
           <img
             src={logo}
             alt="Zentrix Gym logo"
-            className="h-10 w-auto rounded-md object-contain shadow-[var(--shadow-glow)]"
+            className="h-9 sm:h-10 w-auto rounded-md object-contain shadow-[var(--shadow-glow)] shrink-0"
           />
-          <span className="font-display text-lg font-semibold tracking-tight">
+          <span className="font-display text-base sm:text-lg font-semibold tracking-tight truncate">
             ZENTRIX<span className="text-primary">.</span>
           </span>
         </a>
@@ -62,9 +62,9 @@ export function Nav() {
         </div>
       </div>
       {open && (
-        <div className="md:hidden glass mt-3 mx-6 rounded-xl p-4 flex flex-col gap-3">
+        <div className="md:hidden glass mt-3 mx-4 sm:mx-6 rounded-xl p-4 flex flex-col gap-3">
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-sm">
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-sm break-words">
               {l.label}
             </a>
           ))}

@@ -26,14 +26,14 @@ const fmt = (n: number) => n.toLocaleString("en-US");
 export function Memberships() {
   const { t } = useI18n();
   return (
-    <section id="memberships" className="relative py-32">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="memberships" className="relative py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-2xl">
-          <span className="text-xs uppercase tracking-[0.3em] text-primary">{t("mb.kicker")}</span>
-          <h2 className="mt-3 text-4xl md:text-5xl font-bold">
+          <span className="text-xs uppercase tracking-[0.18em] sm:tracking-[0.3em] text-primary">{t("mb.kicker")}</span>
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold break-words">
             {t("mb.title1")} <span className="text-gradient">{t("mb.title2")}</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">{t("mb.desc")}</p>
+          <p className="mt-4 text-muted-foreground break-words">{t("mb.desc")}</p>
         </div>
 
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -51,11 +51,11 @@ export function Memberships() {
               }`}
             >
               {p.popular && (
-                <span className="absolute -top-3 left-6 rounded-full bg-gradient-to-r from-primary to-primary-glow px-3 py-1 text-[10px] uppercase tracking-widest text-primary-foreground">
+                <span className="absolute -top-3 left-6 max-w-[calc(100%-3rem)] rounded-full bg-gradient-to-r from-primary to-primary-glow px-3 py-1 text-[10px] uppercase tracking-widest text-primary-foreground break-words text-center">
                   {t("mb.popular")}
                 </span>
               )}
-              <h3 className="text-lg font-semibold">{t(p.nameKey)}</h3>
+              <h3 className="text-lg font-semibold break-words">{t(p.nameKey)}</h3>
               <div className="mt-6 flex items-baseline gap-2">
                 <span className="text-4xl font-bold tracking-tight">{fmt(p.price)}</span>
                 <span className="text-sm text-muted-foreground">{t("mb.amd")}</span>
@@ -73,7 +73,7 @@ export function Memberships() {
                 {p.perkKeys.map((perk) => (
                   <li key={perk} className="flex items-start gap-2 text-sm">
                     <Check className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                    <span className="text-muted-foreground">{t(perk)}</span>
+                    <span className="text-muted-foreground break-words">{t(perk)}</span>
                   </li>
                 ))}
               </ul>

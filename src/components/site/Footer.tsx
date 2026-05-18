@@ -13,7 +13,7 @@ export function Footer() {
   ];
   return (
     <footer className="relative border-t border-border mt-12">
-      <div className="mx-auto max-w-7xl px-6 py-14 grid md:grid-cols-3 gap-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-14 grid md:grid-cols-3 gap-10">
         <div>
           <div className="flex items-center gap-2">
             <img src={logo} alt="Zentrix Gym logo" className="h-10 w-auto rounded-md object-contain" />
@@ -21,7 +21,7 @@ export function Footer() {
               ZENTRIX<span className="text-primary">.</span>
             </span>
           </div>
-          <p className="mt-4 text-sm text-muted-foreground max-w-xs">{t("ft.tagline")}</p>
+          <p className="mt-4 text-sm text-muted-foreground max-w-xs break-words">{t("ft.tagline")}</p>
         </div>
 
         <div>
@@ -29,7 +29,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm">
             {links.map(([l, h]) => (
               <li key={l}>
-                <a href={h} className="hover:text-primary transition-colors">{l}</a>
+                <a href={h} className="hover:text-primary transition-colors break-words">{l}</a>
               </li>
             ))}
           </ul>
@@ -38,9 +38,9 @@ export function Footer() {
         <div>
           <div className="text-xs uppercase tracking-widest text-muted-foreground">{t("ft.visit")}</div>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li>{t("ct.addressV")}</li>
+            <li className="break-words">{t("ct.addressV")}</li>
             <li>+374 44 20 11 00</li>
-            <li>{t("ct.hoursV")}</li>
+            <li className="break-words">{t("ct.hoursV")}</li>
           </ul>
           <a
             href="https://www.instagram.com/zentrixgym"
@@ -53,13 +53,13 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border">
-        <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <div>© {new Date().getFullYear()} Zentrix Gym. {t("ft.rights")}</div>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground text-center sm:text-start">
+          <div className="break-words">© {new Date().getFullYear()} Zentrix Gym. {t("ft.rights")}</div>
           <a
             href="https://orscale.com"
             target="_blank"
             rel="noreferrer"
-            className="hover:text-primary transition-colors"
+            className="hover:text-primary transition-colors break-words"
           >
             {t("ft.poweredBy")}
           </a>
@@ -68,5 +68,3 @@ export function Footer() {
     </footer>
   );
 }
-
-

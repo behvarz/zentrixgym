@@ -14,11 +14,11 @@ const reviews = [
 export function Testimonials() {
   const { t } = useI18n();
   return (
-    <section className="relative py-32">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="relative py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-2xl">
-          <span className="text-xs uppercase tracking-[0.3em] text-primary">{t("tm.kicker")}</span>
-          <h2 className="mt-3 text-4xl md:text-5xl font-bold">
+          <span className="text-xs uppercase tracking-[0.18em] sm:tracking-[0.3em] text-primary">{t("tm.kicker")}</span>
+          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold break-words">
             {t("tm.title1")} <span className="text-gradient">{t("tm.title2")}</span>
           </h2>
         </div>
@@ -31,21 +31,21 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="glass rounded-2xl p-6 hover:border-primary/40 transition-colors"
+              className="glass rounded-2xl p-5 sm:p-6 hover:border-primary/40 transition-colors min-w-0"
             >
               <div className="flex gap-0.5 text-primary">
                 {Array.from({ length: 5 }).map((_, j) => (
                   <Star key={j} className="h-4 w-4 fill-primary" />
                 ))}
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">"{t(r.key)}"</p>
-              <div className="mt-6 flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary-glow text-sm font-semibold text-primary-foreground">
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground break-words">"{t(r.key)}"</p>
+              <div className="mt-6 flex items-center gap-3 min-w-0">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary-glow text-sm font-semibold text-primary-foreground shrink-0">
                   {r.name.split(" ").map((n) => n[0]).join("")}
                 </span>
-                <div>
-                  <div className="text-sm font-medium">{r.name}</div>
-                  <div className="text-xs text-muted-foreground">{t("tm.role")} · {r.years}</div>
+                <div className="min-w-0">
+                  <div className="text-sm font-medium break-words">{r.name}</div>
+                  <div className="text-xs text-muted-foreground break-words">{t("tm.role")} · {r.years}</div>
                 </div>
               </div>
             </motion.div>

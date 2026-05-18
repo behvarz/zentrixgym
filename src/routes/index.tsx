@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <LanguageProvider>
-      <main className="relative">
+      <main className="relative overflow-x-hidden">
         <Nav />
         <Hero />
         <Memberships />

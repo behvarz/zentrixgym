@@ -25,7 +25,7 @@ export function LangSwitcher({ compact = false }: { compact?: boolean }) {
         aria-label="Language"
       >
         <Globe className="h-3.5 w-3.5 text-primary" />
-        {current.label}
+        <span className="max-w-[72px] truncate">{current.label}</span>
       </button>
       {open && (
         <div className="absolute right-0 mt-2 min-w-[120px] glass rounded-xl p-1 z-50">
@@ -36,7 +36,7 @@ export function LangSwitcher({ compact = false }: { compact?: boolean }) {
                 setLang(l.code);
                 setOpen(false);
               }}
-              className={`w-full text-left px-3 py-2 text-xs rounded-lg hover:bg-primary/15 transition-colors ${
+              className={`w-full text-start px-3 py-2 text-xs rounded-lg hover:bg-primary/15 transition-colors ${
                 l.code === lang ? "text-primary" : ""
               }`}
             >
