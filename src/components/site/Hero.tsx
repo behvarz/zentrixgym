@@ -37,7 +37,7 @@ export function Hero() {
         >
           <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-primary neon-pulse" />
-            {t("hero.badge")}
+            Երևան
           </span>
           <h1 className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95]">
             {t("hero.title1")} <br />

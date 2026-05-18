@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
-export type Lang = "hy" | "en" | "ru";
+export type Lang = "hy" | "en" | "ru" | "fa";
 
 type Dict = Record<string, string>;
 
@@ -344,6 +344,120 @@ const translations: Record<Lang, Dict> = {
     "ft.poweredBy": "Powered by Orscale",
     "ft.location": "Ереван, Армения",
   },
+  fa: {
+    "nav.memberships": "عضویت‌ها",
+    "nav.about": "درباره ما",
+    "nav.facilities": "امکانات",
+    "nav.gallery": "گالری",
+    "nav.contact": "تماس",
+
+    "hero.badge": "ایروان",
+    "hero.title1": "انرژی",
+    "hero.title2": "از اینجا",
+    "hero.title3": "شروع می‌شود",
+    "hero.subtitle":
+      "تجربه‌ای مدرن از فیتنس در ایروان با تجهیزات پریمیوم و فضایی انگیزه‌بخش برای کسانی که به دنبال قدرت، انضباط و تغییر واقعی هستند.",
+    "hero.cta1": "همین حالا بپیوند",
+    "hero.cta2": "مشاهده عضویت‌ها",
+    "stat.equipment": "تجهیزات پریمیوم",
+    "stat.hours": "باز 07:00 – 23:00",
+    "stat.training": "تمرین شخصی",
+    "stat.interior": "فضای داخلی مدرن",
+
+    "mb.kicker": "عضویت‌ها",
+    "mb.title1": "مسیر",
+    "mb.title2": "خودت را انتخاب کن",
+    "mb.desc": "پکیج‌های منعطف و پلن‌های نامحدود متناسب با هدف‌هایت. لغو در هر زمان، بدون هزینه پنهان.",
+    "mb.popular": "محبوب‌ترین",
+    "mb.cta": "شروع کن",
+    "mb.per": "هر",
+    "mb.amd": "درام",
+    "period.package": "پکیج",
+    "period.month": "ماه",
+    "period.3months": "۳ ماه",
+    "period.6months": "۶ ماه",
+    "period.year": "سال",
+    "plan.8": "۸ جلسه",
+    "plan.12": "۱۲ جلسه",
+    "plan.15": "۱۵ جلسه",
+    "plan.1m": "۱ ماه نامحدود",
+    "plan.3m": "۳ ماه نامحدود",
+    "plan.6m": "۶ ماه نامحدود",
+    "plan.1y": "۱ سال نامحدود",
+    "perk.full": "دسترسی کامل به باشگاه",
+    "perk.locker": "استفاده از لاکر",
+    "perk.flex": "برنامه زمانی منعطف",
+    "perk.unlimited": "جلسات نامحدود",
+    "perk.zones": "تمام بخش‌ها شامل می‌شود",
+    "perk.priority": "پشتیبانی اولویت‌دار",
+    "perk.save27": "۲۷٪ صرفه‌جویی",
+    "perk.save34": "۳۴٪ صرفه‌جویی",
+    "perk.best": "بهترین ارزش",
+
+    "ab.kicker": "درباره Zentrix",
+    "ab.title1": "برای کسانی ساخته شده",
+    "ab.title2": "که به کمتر راضی نیستند",
+    "ab.p1":
+      "Zentrix Gym برای افرادی طراحی شده که قدرت، انضباط، اعتمادبه‌نفس و تغییر واقعی می‌خواهند. ما تجهیزات مدرن، فضای انگیزه‌بخش و محیطی حرفه‌ای را کنار هم آورده‌ایم تا یکی از بهترین فضاهای تمرینی ایروان را بسازیم.",
+    "ab.p2": "چه شروع‌کننده باشی، چه دنبال رکورد شخصی؛ انرژی اینجا همراه تو حرکت می‌کند.",
+    "ab.stat1": "اعضا",
+    "ab.stat2": "مربی‌ها",
+    "ab.stat3": "ساعت در روز",
+
+    "fc.kicker": "امکانات",
+    "fc.title1": "همه‌چیز برای",
+    "fc.title2": "پیشروی بیشتر",
+    "fc.desc": "یک محیط تمرینی کامل برای عملکرد بهتر، ریکاوری مناسب و فضایی که هر روز به آن برگردی.",
+    "fc.f1.t": "تجهیزات پریمیوم",
+    "fc.f1.d": "دستگاه‌های قدرتی و وزنه‌های آزاد از برندهای برتر دنیا.",
+    "fc.f2.t": "زون کاردیو",
+    "fc.f2.d": "تردمیل، دوچرخه و روئینگ با نمایشگر و چیدمان مدرن.",
+    "fc.f3.t": "تمرین قدرتی",
+    "fc.f3.d": "پاوررک، پلتفرم و بخش‌های تخصصی برای تمرین حرفه‌ای.",
+    "fc.f4.t": "مربی شخصی",
+    "fc.f4.d": "مربیان دارای مدرک با برنامه‌ریزی دقیق بر اساس هدف تو.",
+    "fc.f5.t": "تمرین فانکشنال",
+    "fc.f5.d": "فضای باز تمرین، اسلد، طناب و ریگ برای آمادگی کامل بدن.",
+    "fc.f6.t": "رختکن",
+    "fc.f6.d": "لاکرهای مدرن، دوش و فضای تعویض لباس با کیفیت پریمیوم.",
+    "fc.learn": "بیشتر ببین",
+
+    "gl.kicker": "گالری",
+    "gl.title1": "وارد",
+    "gl.title2": "Zentrix شو",
+
+    "tm.kicker": "اعضا",
+    "tm.title1": "نظر",
+    "tm.title2": "مردم",
+    "tm.role": "عضو",
+    "tm.r1": "بهترین باشگاه ایروان. تجهیزات عالی و فضای فوق‌العاده انگیزه‌بخش.",
+    "tm.r2": "مدرن، تمیز و حرفه‌ای. مربی‌ها واقعاً پیگیر هستند و زون کاردیو عالی است.",
+    "tm.r3": "Zentrix سبک تمرین من را تغییر داد. بخش قدرتی واقعاً حرفه‌ای است.",
+    "tm.r4": "طراحی و حال‌وهوای باشگاه را دوست دارم؛ پریمیوم ولی صمیمی.",
+    "tm.r5": "از صبح زود تا شب باز است؛ دقیقاً همان چیزی که نیاز داشتم.",
+    "tm.r6": "از نورپردازی تا موسیقی، همه‌چیز با دقت طراحی شده است.",
+
+    "ct.kicker": "تماس",
+    "ct.title1": "در",
+    "ct.title2": "ایروان به ما سر بزن",
+    "ct.desc": "برای بازدید بیا، با تیم آشنا شو و انرژی فضا را از نزدیک حس کن.",
+    "ct.address": "آدرس",
+    "ct.addressV": "گریبایدوف 23/4، ایروان، ارمنستان",
+    "ct.phone": "تلفن",
+    "ct.hours": "ساعت کاری",
+    "ct.hoursV": "هر روز · 07:00 – 23:00",
+    "ct.ig": "اینستاگرام",
+    "ct.callCta": "برای هماهنگی بازدید تماس بگیر",
+    "ct.openYandexMaps": "باز کردن در Yandex Maps",
+    "ct.openGoogleMaps": "باز کردن در Google Maps",
+
+    "ft.tagline": "تجربه پریمیوم فیتنس در ایروان. برای قدرت، انضباط و تغییر واقعی.",
+    "ft.explore": "بخش‌ها",
+    "ft.visit": "مراجعه",
+    "ft.rights": "تمام حقوق محفوظ است.",
+    "ft.poweredBy": "Powered by Orscale",
+    "ft.location": "ایروان، ارمنستان",
+  },
 };
 
 const Ctx = createContext<{ lang: Lang; setLang: (l: Lang) => void; t: (k: string) => string }>({
@@ -357,8 +471,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (typeof window === "undefined") return;
     const saved = window.localStorage.getItem("lang") as Lang | null;
-    if (saved && ["hy", "en", "ru"].includes(saved)) setLangState(saved);
+    if (saved && ["hy", "en", "ru", "fa"].includes(saved)) setLangState(saved);
   }, []);
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
+  }, [lang]);
   const setLang = (l: Lang) => {
     setLangState(l);
     if (typeof window !== "undefined") window.localStorage.setItem("lang", l);

@@ -3,9 +3,10 @@ import { useState } from "react";
 import { Globe } from "lucide-react";
 
 const langs: { code: Lang; label: string }[] = [
-  { code: "hy", label: "ՀԱՅ" },
+  { code: "hy", label: "Հայ" },
   { code: "en", label: "EN" },
   { code: "ru", label: "RU" },
+  { code: "fa", label: "فارسی" },
 ];
 
 export function LangSwitcher({ compact = false }: { compact?: boolean }) {
