@@ -35,10 +35,6 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl min-w-0"
         >
-          <span className="inline-flex max-w-full items-center gap-2 rounded-full glass px-4 py-1.5 text-xs tracking-[0.14em] sm:tracking-[0.2em] text-muted-foreground">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary neon-pulse" />
-            <span className="truncate">Երևան</span>
-          </span>
           <h1 className="mt-6 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.02] sm:leading-[0.95] break-words">
             {t("hero.title1")} <br />
             {t("hero.title2")} <span className="text-gradient">{t("hero.title3")}</span>
