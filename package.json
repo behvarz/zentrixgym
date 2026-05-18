@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "vercel-build": "node scripts/vercel-build.mjs",
     "build:dev": "vite build --mode development",
     "single:html": "node scripts/create-single-html.mjs",
     "preview": "vite preview",
