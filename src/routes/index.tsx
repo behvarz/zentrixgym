@@ -14,9 +14,9 @@ import logo from "@/assets/logo.png";
 const siteUrl = (import.meta.env.VITE_SITE_URL || "https://zentrixgym.vercel.app").replace(/\/$/, "");
 const pageUrl = `${siteUrl}/`;
 const ogImageUrl = logo.startsWith("http") ? logo : `${siteUrl}${logo}`;
-const pageTitle = "Zentrix Gym | Premium Fitness in Yerevan";
+const pageTitle = "Zentrix Gym | Պրեմիում ֆիթնես Երևանում";
 const pageDescription =
-  "Zentrix Gym in Yerevan: premium equipment, modern interior, and a motivating atmosphere. Open daily 07:00-23:00.";
+  "Zentrix Gym՝ պրեմիում ֆիթնես ակումբ Երևանում։ Հասցե՝ Գրիբոյեդով 23/4, Երևան։";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -27,9 +27,10 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: pageTitle },
       { property: "og:description", content: pageDescription },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "hy_AM" },
       { property: "og:url", content: pageUrl },
       { property: "og:image", content: ogImageUrl },
-      { property: "og:image:alt", content: "Zentrix Gym logo" },
+      { property: "og:image:alt", content: "Zentrix Gym լոգո" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: pageTitle },
       { name: "twitter:description", content: pageDescription },
