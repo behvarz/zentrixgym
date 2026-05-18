@@ -9,23 +9,31 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { LanguageProvider } from "@/components/site/i18n";
+import logo from "@/assets/logo.png";
+
+const siteUrl = (import.meta.env.VITE_SITE_URL || "https://zentrixgym.vercel.app").replace(/\/$/, "");
+const pageUrl = `${siteUrl}/`;
+const ogImageUrl = logo.startsWith("http") ? logo : `${siteUrl}${logo}`;
+const pageTitle = "Zentrix Gym | Premium Fitness in Yerevan";
+const pageDescription =
+  "Zentrix Gym in Yerevan: premium equipment, modern interior, and a motivating atmosphere. Open daily 07:00-23:00.";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Zentrix Gym — Premium Fitness in Yerevan" },
-      {
-        name: "description",
-        content:
-          "Zentrix Gym in Yerevan: premium equipment, modern interior and motivating atmosphere. Memberships from 14,000 AMD. Open daily 07:00–23:00.",
-      },
-      { property: "og:title", content: "Zentrix Gym — Premium Fitness in Yerevan" },
-      {
-        property: "og:description",
-        content: "Modern fitness experience in Yerevan with premium equipment and a motivating atmosphere.",
-      },
+      { title: pageTitle },
+      { name: "description", content: pageDescription },
+      { property: "og:title", content: pageTitle },
+      { property: "og:description", content: pageDescription },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: pageUrl },
+      { property: "og:image", content: ogImageUrl },
+      { property: "og:image:alt", content: "Zentrix Gym logo" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: pageTitle },
+      { name: "twitter:description", content: pageDescription },
+      { name: "twitter:image", content: ogImageUrl },
     ],
   }),
 });

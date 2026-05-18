@@ -72,18 +72,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Zentrix Gym website showcases a premium, modern fitness experience with a dark, luxurious aesthetic." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Zentrix Gym website showcases a premium, modern fitness experience with a dark, luxurious aesthetic." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Zentrix Gym website showcases a premium, modern fitness experience with a dark, luxurious aesthetic." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e6a7238e-abd4-4dca-b4bd-40c8ea497c6c/id-preview-b490b09d--2bdd0958-4aac-4d0a-bbea-017f7c2425e8.lovable.app-1778583931623.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e6a7238e-abd4-4dca-b4bd-40c8ea497c6c/id-preview-b490b09d--2bdd0958-4aac-4d0a-bbea-017f7c2425e8.lovable.app-1778583931623.png" },
+      { name: "theme-color", content: "#0B0D10" },
     ],
     links: [
       {
