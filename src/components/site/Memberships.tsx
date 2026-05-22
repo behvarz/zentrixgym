@@ -1,30 +1,102 @@
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
 import { useI18n } from "./i18n";
 
-type Plan = {
-  nameKey: string;
+type PriceRow = {
+  labelKey: string;
   price: number;
-  oldPrice?: number;
-  periodKey: string;
-  perkKeys: string[];
-  popular?: boolean;
 };
 
-const plans: Plan[] = [
-  { nameKey: "plan.8", price: 14000, oldPrice: 16000, periodKey: "period.package", perkKeys: ["perk.full", "perk.locker", "perk.flex"] },
-  { nameKey: "plan.12", price: 16000, oldPrice: 18000, periodKey: "period.package", perkKeys: ["perk.full", "perk.locker", "perk.flex"] },
-  { nameKey: "plan.15", price: 18000, oldPrice: 20000, periodKey: "period.package", perkKeys: ["perk.full", "perk.locker", "perk.flex"] },
-  { nameKey: "plan.1m", price: 25000, oldPrice: 30000, periodKey: "period.month", perkKeys: ["perk.unlimited", "perk.zones", "perk.priority"], popular: true },
-  { nameKey: "plan.3m", price: 55000, oldPrice: 75000, periodKey: "period.3months", perkKeys: ["perk.unlimited", "perk.zones", "perk.save27"] },
-  { nameKey: "plan.6m", price: 99000, oldPrice: 150000, periodKey: "period.6months", perkKeys: ["perk.unlimited", "perk.zones", "perk.save34"] },
-  { nameKey: "plan.1y", price: 199000, oldPrice: 300000, periodKey: "period.year", perkKeys: ["perk.unlimited", "perk.zones", "perk.best"] },
-];
+type PricingCard = {
+  timeKey?: string;
+  rows: PriceRow[];
+};
 
-const fmt = (n: number) => n.toLocaleString("en-US");
+type PricingGroup = {
+  titleKey: string;
+  cards: PricingCard[];
+};
+
+const sessionGroup: PricingGroup = {
+  titleKey: "mb.section.sessions",
+  cards: [
+    {
+      timeKey: "mb.time.day",
+      rows: [
+        { labelKey: "plan.8", price: 12000 },
+        { labelKey: "plan.12", price: 14000 },
+        { labelKey: "plan.15", price: 16000 },
+      ],
+    },
+    {
+      timeKey: "mb.time.full",
+      rows: [
+        { labelKey: "plan.8", price: 14000 },
+        { labelKey: "plan.12", price: 16000 },
+        { labelKey: "plan.15", price: 18000 },
+      ],
+    },
+  ],
+};
+
+const unlimitedGroup: PricingGroup = {
+  titleKey: "mb.section.unlimited",
+  cards: [
+    {
+      timeKey: "mb.time.day",
+      rows: [
+        { labelKey: "plan.1m", price: 23000 },
+        { labelKey: "plan.3m", price: 50000 },
+        { labelKey: "plan.6m", price: 100000 },
+        { labelKey: "plan.1y", price: 170000 },
+      ],
+    },
+    {
+      timeKey: "mb.time.full",
+      rows: [
+        { labelKey: "plan.1m", price: 25000 },
+        { labelKey: "plan.3m", price: 55000 },
+        { labelKey: "plan.6m", price: 110000 },
+        { labelKey: "plan.1y", price: 200000 },
+      ],
+    },
+  ],
+};
+
+const dailyGroup: PricingGroup = {
+  titleKey: "mb.section.daily",
+  cards: [
+    {
+      timeKey: "mb.time.day",
+      rows: [{ labelKey: "mb.row.daily", price: 2000 }],
+    },
+    {
+      timeKey: "mb.time.full",
+      rows: [{ labelKey: "mb.row.daily", price: 3000 }],
+    },
+  ],
+};
+
+const trainerGroup: PricingGroup = {
+  titleKey: "mb.section.trainer",
+  cards: [
+    {
+      rows: [
+        { labelKey: "plan.8", price: 35000 },
+        { labelKey: "plan.12", price: 40000 },
+        { labelKey: "plan.15", price: 45000 },
+        { labelKey: "mb.row.dailyFull", price: 6000 },
+        { labelKey: "mb.row.dailyUntil16", price: 5000 },
+      ],
+    },
+  ],
+};
+
+const fmt = (n: number) => n.toLocaleString("de-DE");
 
 export function Memberships() {
   const { t } = useI18n();
+  const groups = [sessionGroup, unlimitedGroup, dailyGroup, trainerGroup];
+
   return (
     <section id="memberships" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -36,59 +108,39 @@ export function Memberships() {
           <p className="mt-4 text-muted-foreground break-words">{t("mb.desc")}</p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {plans.map((p, i) => (
-            <motion.article
-              key={p.nameKey}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              className={`group relative rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 ${
-                p.popular
-                  ? "bg-gradient-to-b from-primary/15 to-card border border-primary/40 glow-border"
-                  : "glass hover:border-primary/40"
-              }`}
-            >
-              {p.popular && (
-                <span className="absolute -top-3 left-6 max-w-[calc(100%-3rem)] rounded-full bg-gradient-to-r from-primary to-primary-glow px-3 py-1 text-[10px] uppercase tracking-widest text-primary-foreground break-words text-center">
-                  {t("mb.popular")}
-                </span>
-              )}
-              <h3 className="text-lg font-semibold break-words">{t(p.nameKey)}</h3>
-              <div className="mt-6 flex items-baseline gap-2">
-                <span className="text-4xl font-bold tracking-tight">{fmt(p.price)}</span>
-                <span className="text-sm text-muted-foreground">{t("mb.amd")}</span>
-              </div>
-              {p.oldPrice && (
-                <div className="mt-1 text-xs text-muted-foreground/70 line-through">
-                  {fmt(p.oldPrice)} {t("mb.amd")}
-                </div>
-              )}
-              <div className="mt-1 text-xs text-muted-foreground">
-                {t("mb.per")} {t(p.periodKey)}
-              </div>
-
-              <ul className="mt-6 space-y-2.5">
-                {p.perkKeys.map((perk) => (
-                  <li key={perk} className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                    <span className="text-muted-foreground break-words">{t(perk)}</span>
-                  </li>
+        <div className="mt-16 space-y-12">
+          {groups.map((group, groupIndex) => (
+            <div key={group.titleKey}>
+              <h3 className="text-xl sm:text-2xl font-semibold tracking-wide">{t(group.titleKey)}</h3>
+              <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5">
+                {group.cards.map((card, cardIndex) => (
+                  <motion.article
+                    key={`${group.titleKey}-${card.timeKey ?? "single"}-${cardIndex}`}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.45, delay: groupIndex * 0.04 + cardIndex * 0.04 }}
+                    className="glass rounded-2xl p-6 hover:border-primary/40 transition-colors"
+                  >
+                    {card.timeKey && (
+                      <div className="inline-flex rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                        {t(card.timeKey)}
+                      </div>
+                    )}
+                    <ul className="mt-4 space-y-3">
+                      {card.rows.map((row) => (
+                        <li key={`${row.labelKey}-${row.price}`} className="flex items-center justify-between gap-4">
+                          <span className="text-sm sm:text-base text-muted-foreground break-words">{t(row.labelKey)}</span>
+                          <span className="text-base sm:text-lg font-bold whitespace-nowrap">
+                            {fmt(row.price)} {t("mb.amd")}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.article>
                 ))}
-              </ul>
-
-              <a
-                href="#contact"
-                className={`mt-7 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition-all ${
-                  p.popular
-                    ? "bg-gradient-to-r from-primary to-primary-glow text-primary-foreground"
-                    : "border border-border hover:border-primary/60 hover:bg-primary/10"
-                }`}
-              >
-                {t("mb.cta")}
-              </a>
-            </motion.article>
+              </div>
+            </div>
           ))}
         </div>
       </div>
