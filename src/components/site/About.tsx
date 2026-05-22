@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import g1 from "@/assets/g1.jpg";
-import g4 from "@/assets/g4.jpg";
-import g5 from "@/assets/g5.jpg";
+import img5 from "@/assets/5.jpg";
+import img7 from "@/assets/7.jpg";
+import img8 from "@/assets/8.jpg";
 import { Counter } from "./Counter";
 import { useI18n } from "./i18n";
 
@@ -39,11 +39,11 @@ export function About() {
           className="relative grid grid-cols-2 gap-4 h-[360px] sm:h-[500px]"
         >
           <div className="space-y-4">
-            <img src={g4} alt="" loading="lazy" className="rounded-2xl object-cover h-[60%] w-full glow-border" />
-            <img src={g1} alt="" loading="lazy" className="rounded-2xl object-cover h-[36%] w-full" />
+            <img src={img7} alt="" loading="lazy" className="rounded-2xl object-cover h-[60%] w-full glow-border" />
+            <img src={img8} alt="" loading="lazy" className="rounded-2xl object-cover h-[36%] w-full" />
           </div>
           <div className="pt-12">
-            <img src={g5} alt="" loading="lazy" className="rounded-2xl object-cover h-full w-full float" />
+            <img src={img5} alt="" loading="lazy" className="rounded-2xl object-cover h-full w-full float" />
           </div>
         </motion.div>
       </div>

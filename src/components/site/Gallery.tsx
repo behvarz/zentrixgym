@@ -1,19 +1,19 @@
 import { motion } from "framer-motion";
-import g1 from "@/assets/g1.jpg";
-import g2 from "@/assets/g2.jpg";
-import g3 from "@/assets/g3.jpg";
-import g4 from "@/assets/g4.jpg";
-import g5 from "@/assets/g5.jpg";
-import g6 from "@/assets/g6.jpg";
+import img1 from "@/assets/1.jpg";
+import img2 from "@/assets/2.jpg";
+import img3 from "@/assets/3.jpg";
+import img4 from "@/assets/4.jpg";
+import img6 from "@/assets/6.jpg";
+import img9 from "@/assets/9.jpg";
 import { useI18n } from "./i18n";
 
 const imgs = [
-  { src: g3, span: "row-span-2" },
-  { src: g2, span: "" },
-  { src: g4, span: "" },
-  { src: g1, span: "row-span-2" },
-  { src: g6, span: "" },
-  { src: g5, span: "" },
+  { src: img3, span: "row-span-2" },
+  { src: img1, span: "" },
+  { src: img4, span: "" },
+  { src: img9, span: "row-span-2" },
+  { src: img6, span: "" },
+  { src: img2, span: "" },
 ];
 
 export function Gallery() {
