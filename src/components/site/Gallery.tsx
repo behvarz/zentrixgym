@@ -38,10 +38,30 @@ export function Gallery() {
           </a>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[160px] sm:auto-rows-[180px] gap-4">
+        <div className="mt-12 space-y-4 sm:hidden">
           {imgs.map((im, i) => (
             <motion.div
-              key={i}
+              key={`mobile-${i}`}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.45, delay: i * 0.04 }}
+              className="rounded-2xl border border-white/10 bg-black/30 p-2"
+            >
+              <img
+                src={im.src}
+                alt=""
+                loading="lazy"
+                className="h-auto max-h-[70vh] w-full object-contain rounded-xl"
+              />
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="mt-12 hidden sm:grid sm:grid-cols-2 md:grid-cols-4 auto-rows-[180px] gap-4">
+          {imgs.map((im, i) => (
+            <motion.div
+              key={`desktop-${i}`}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-40px" }}
