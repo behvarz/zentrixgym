@@ -8,6 +8,7 @@ export function Nav() {
   const { t } = useI18n();
   const links = [
     { href: "#memberships", label: t("nav.memberships") },
+    { href: "#boxing", label: t("nav.boxing") },
     { href: "#about", label: t("nav.about") },
     { href: "#facilities", label: t("nav.facilities") },
     { href: "#gallery", label: t("nav.gallery") },
@@ -40,7 +41,7 @@ export function Nav() {
             ZENTRIX<span className="text-primary">.</span>
           </span>
         </a>
-        <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+        <nav className="hidden md:flex items-center gap-5 text-sm text-muted-foreground">
           {links.map((l) => (
             <a key={l.href} href={l.href} className="hover:text-foreground transition-colors">
               {l.label}
