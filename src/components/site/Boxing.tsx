@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Activity, Gauge, ShieldCheck, Sparkles, UserRoundCheck, Zap } from "lucide-react";
+import { Activity, Gauge, Quote, ShieldCheck, Sparkles, UserRoundCheck, Zap } from "lucide-react";
 import { useI18n } from "./i18n";
 
 const benefits = [
@@ -37,6 +37,16 @@ export function Boxing() {
               {t("box.title1")} <span className="text-gradient">{t("box.title2")}</span>
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed break-words">{t("box.desc")}</p>
+
+            <blockquote className="mt-7 rounded-2xl border border-primary/30 bg-primary/10 p-5">
+              <Quote className="h-5 w-5 text-primary" />
+              <p className="mt-3 text-base sm:text-lg font-semibold leading-relaxed break-words">
+                {t("box.quote1")}
+              </p>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed break-words">
+                {t("box.quote2")}
+              </p>
+            </blockquote>
 
             <div className="mt-7 inline-flex max-w-full items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
               <Zap className="h-4 w-4 shrink-0" />
